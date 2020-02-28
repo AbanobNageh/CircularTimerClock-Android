@@ -102,15 +102,15 @@ Simply add the View to your layout xml
 To retrieve the time simply call the view from your activity like this
 ```kotlin
 val clock = findViewById<View>(R.id.circular_clock) as CircularTimerClock
-        clock.setOnTimeChangedListener(object : CircularTimerClock.ontTimeChanged {
-            override fun onStartTimeChange(time: String?, hour: Int, minutes: Int, isAM: Boolean) {
-                Log.d("start time: ", "" + time)
-            }
+clock.setOnTimeChangedListener(object : CircularTimerClock.ontTimeChanged {
+     override fun onStartTimeChange(time: String?, hour: Int, minutes: Int, isAM: Boolean) {
+          Log.d("start time: ", "" + time)
+     }
 
-            override fun onEndTimeChange(time: String?, hour: Int, minutes: Int, isAM: Boolean) {
-                Log.d("end time: ", "" + time)
-            }
-        })
+     override fun onEndTimeChange(time: String?, hour: Int, minutes: Int, isAM: Boolean) {
+          Log.d("end time: ", "" + time)
+     }
+})
 ```
 To set the clock time programmatically you can use these functions
 ```kotlin
