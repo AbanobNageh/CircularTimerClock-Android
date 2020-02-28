@@ -1,38 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:timer="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.giliy.circulartimerclockexample.MainActivity">
+    tools:context="com.abanobNageh.circulartimerclockexample.MainActivity">
 
-    <giliy.com.circulartimerclock.CircularTimerClock
-        android:layout_width="wrap_content"
+    <abanobNageh.com.circulartimerclock.CircularTimerClock
         android:id="@+id/circular_clock"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         timer:arc_dash_size="40dp"
-        timer:start_hour="5"
-        timer:start_minutes="20"
-        timer:end_hour="9"
-        timer:end_minutes="29"
-        timer:clock_time_interval="5"
-        timer:clock_tick_interval="15"
+        timer:arc_gradient_color_end="#00964b"
+        timer:arc_gradient_color_start="#78f8b8"
+        timer:border_color="#e7e7e7"
+        timer:border_thickness="40dp"
+        timer:clock_background_image="@drawable/sunrise"
         timer:clock_hour_color="#FFF"
         timer:clock_tick_color="#FFF"
-        timer:hours_size="18sp"
-        timer:start_time_is_am="true"
-        timer:end_time_is_am="false"
-        timer:is_clock_inside="true"
-        timer:border_thickness="40dp"
-        timer:border_color="#e7e7e7"
-        timer:arc_gradient_color_start="#78f8b8"
-        timer:arc_gradient_color_end="#00964b"
-        timer:clock_background_image="@drawable/sunrise"
-        timer:start_thumb_image="@drawable/circle_toggle_shape"
+        timer:clock_tick_interval="15"
+        timer:clock_time_interval="5"
+        timer:end_hour="9"
+        timer:end_minutes="29"
         timer:end_thumb_image="@drawable/circle_toggle_shape"
-        timer:thumb_size="35dp" >
+        timer:end_time_is_am="false"
+        timer:hours_size="18sp"
+        timer:is_clock_inside="true"
+        timer:layout_constraintBottom_toTopOf="@+id/start_hour_edit_text"
+        timer:layout_constraintEnd_toEndOf="parent"
+        timer:layout_constraintHorizontal_bias="0.5"
+        timer:layout_constraintStart_toStartOf="parent"
+        timer:layout_constraintTop_toTopOf="parent"
+        timer:start_hour="5"
+        timer:start_minutes="20"
+        timer:start_thumb_image="@drawable/circle_toggle_shape"
+        timer:start_time_is_am="true"
+        timer:thumb_size="35dp">
 
-    </giliy.com.circulartimerclock.CircularTimerClock>
+    </abanobNageh.com.circulartimerclock.CircularTimerClock>
 
-</LinearLayout>
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/start_hour_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="number"
+        android:maxLength="2"
+        android:hint="@string/start_hour_text_view_hint"
+        android:textSize="25sp"
+        timer:layout_constraintBottom_toTopOf="@+id/start_minute_edit_text"
+        timer:layout_constraintEnd_toStartOf="@+id/end_hour_edit_text"
+        timer:layout_constraintHorizontal_bias="0.5"
+        timer:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/end_hour_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="number"
+        android:maxLength="2"
+        android:hint="@string/end_hour_text_view_hint"
+        android:textSize="25sp"
+        timer:layout_constraintEnd_toEndOf="parent"
+        timer:layout_constraintHorizontal_bias="0.5"
+        timer:layout_constraintStart_toEndOf="@+id/start_hour_edit_text"
+        timer:layout_constraintTop_toTopOf="@+id/start_hour_edit_text" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/start_minute_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:inputType="number"
+        android:maxLength="2"
+        android:hint="@string/start_minute_text_view_hint"
+        android:textSize="25sp"
+        timer:layout_constraintBottom_toTopOf="@+id/set_start_time_button"
+        timer:layout_constraintEnd_toStartOf="@+id/end_minute_edit_text"
+        timer:layout_constraintHorizontal_bias="0.5"
+        timer:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/end_minute_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:inputType="number"
+        android:maxLength="2"
+        android:hint="@string/end_minute_text_view_hint"
+        android:textSize="25sp"
+        timer:layout_constraintEnd_toEndOf="parent"
+        timer:layout_constraintHorizontal_bias="0.5"
+        timer:layout_constraintStart_toEndOf="@+id/start_minute_edit_text"
+        timer:layout_constraintTop_toTopOf="@+id/start_minute_edit_text" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/set_start_time_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/set_start_time_button_text"
+        timer:layout_constraintBottom_toBottomOf="parent"
+        timer:layout_constraintEnd_toEndOf="@+id/start_minute_edit_text"
+        timer:layout_constraintStart_toStartOf="@+id/start_minute_edit_text" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/set_end_time_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/set_end_time_button_text"
+        timer:layout_constraintBottom_toBottomOf="parent"
+        timer:layout_constraintEnd_toEndOf="@+id/end_minute_edit_text"
+        timer:layout_constraintStart_toStartOf="@+id/end_minute_edit_text" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

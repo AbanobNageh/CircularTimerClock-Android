@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CircularTimerClock-Android.iml" filepath="$PROJECT_DIR$/CircularTimerClock-Android.iml" group="CircularTimerClock-Android" />
+      <module fileurl="file://$PROJECT_DIR$/app/CircularTimerClock-Android-app.iml" filepath="$PROJECT_DIR$/app/CircularTimerClock-Android-app.iml" group="CircularTimerClock-Android/app" />
+      <module fileurl="file://$PROJECT_DIR$/circulartimerclock/CircularTimerClock-Android-circulartimerclock.iml" filepath="$PROJECT_DIR$/circulartimerclock/CircularTimerClock-Android-circulartimerclock.iml" group="CircularTimerClock-Android/circulartimerclock" />
       <module fileurl="file://$PROJECT_DIR$/CircularTimerClockExample.iml" filepath="$PROJECT_DIR$/CircularTimerClockExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/circulartimerclock/circulartimerclock.iml" filepath="$PROJECT_DIR$/circulartimerclock/circulartimerclock.iml" />

@@ -1,4 +1,4 @@
-package giliy.com.circulartimerclock;
+package com.abanobNageh.circulartimerclockexample;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("giliy.com.circulartimerclock.test", appContext.getPackageName());
+        assertEquals("com.giliy.circulartimerclockexample", appContext.getPackageName());
     }
 }
