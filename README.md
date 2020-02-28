@@ -9,6 +9,7 @@ Your can change the interval of of the clock between 1 minute to 60 minutes and 
 ![main](https://user-images.githubusercontent.com/22684921/75572497-8f42c000-5a63-11ea-88f2-82fb25c2befa.gif)
 
 The following has been updated:
+
 V0.2.0:
 1. The library was rewritten in Kotlin.
 2. The library now targets SDK version 29.
