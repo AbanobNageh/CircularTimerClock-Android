@@ -1,10 +1,22 @@
 # CircularTimerClock-Android
+This is a fork from [this repository](https://github.com/giliy/CircularTimerClock-Android).
+
 Circular clock view that can set timer range between hours.
 CircularTimerClock is an android version based on the ios view of the build-in clock.
 With CircularTimeView you can set timer between hours and minutes. 
 Your can change the interval of of the clock between 1 minute to 60 minutes and retrieve current timer
 
-![circular timer clock](https://user-images.githubusercontent.com/11720098/31091386-7882e1ca-a7b3-11e7-8677-43a6689954af.gif)
+![main](https://user-images.githubusercontent.com/22684921/75572497-8f42c000-5a63-11ea-88f2-82fb25c2befa.gif)
+
+The following has been updated:
+
+V0.2.0:
+1. The library was rewritten in Kotlin.
+2. The library now targets SDK version 29.
+3. Fixed minor bug in SDK 29.
+4. Added the ability to set the start and end time programmatically.
+
+![set time](https://user-images.githubusercontent.com/22684921/75571362-ae405280-5a61-11ea-9f39-ac96919c07a1.gif)
 
 ## Attributes
 
@@ -39,7 +51,7 @@ Your can change the interval of of the clock between 1 minute to 60 minutes and 
 
 # How to use
 
-### Add root build.gradle
+### Add this to root build.gradle
 ```
 repositories {
      maven {
@@ -48,10 +60,10 @@ repositories {
 }
 ```
 
-### Add build.gradle
+### Add this to build.gradle
 ```
 dependencies {
-    compile 'com.github.giliy:CircularTimerClock-Android:0.1.1'
+    implementation 'com.github.AbanobNageh:CircularTimerClock-Android:0.2.0'
 }
 ```
 
@@ -59,7 +71,7 @@ dependencies {
 Simply add the View to your layout xml
 
 ```
- <giliy.com.circulartimerclock.CircularTimerClock
+ <abanobNageh.com.circulartimerclock.CircularTimerClock
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/circular_clock"
@@ -86,21 +98,24 @@ Simply add the View to your layout xml
         timer:end_thumb_image="@drawable/circle_toggle_shape"
         timer:thumb_size="35dp" >
 
-    </giliy.com.circulartimerclock.CircularTimerClock>
+    </abanobNageh.com.circulartimerclock.CircularTimerClock>
 ```
 To retrieve the time simply call the view from your activity like this
-```java
-CircularTimerClock clock = (CircularTimerClock) findViewById(R.id.circular_clock);
-        clock.setOnTimeChangedListener(new CircularTimerClock.ontTimeChanged() {
-            @Override
-            public void onStartTimeChange(String time, int hour, int minutes,boolean isAM) {
-                Log.d("time: ",""+time);
+```kotlin
+val clock = findViewById<View>(R.id.circular_clock) as CircularTimerClock
+clock.setOnTimeChangedListener(object : CircularTimerClock.ontTimeChanged {
+     override fun onStartTimeChange(time: String?, hour: Int, minutes: Int, isAM: Boolean) {
+          Log.d("start time: ", "" + time)
+     }
 
-            }
-
-            @Override
-            public void onEndTimeChange(String time, int hour, int minutes, boolean isAM) {
-                Log.d("time: ",""+time);
-            }
-        });
+     override fun onEndTimeChange(time: String?, hour: Int, minutes: Int, isAM: Boolean) {
+          Log.d("end time: ", "" + time)
+     }
+})
+```
+To set the clock time programmatically you can use these functions
+```kotlin
+val clock = findViewById<View>(R.id.circular_clock) as CircularTimerClock
+clock.setStartTime(startHour, startMinute)
+clock.setEndTime(endHour, endMinute)
 ```
