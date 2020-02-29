@@ -136,6 +136,8 @@ class CircularTimerClock @JvmOverloads constructor(context: Context, attrs: Attr
             minute = 59
         }
 
+        this.startHour = hour
+        this.startMinutes = minute
         circularSliderView?.setStartTime(hour, minute)
     }
 
@@ -162,6 +164,8 @@ class CircularTimerClock @JvmOverloads constructor(context: Context, attrs: Attr
             minute = 59
         }
 
+        this.endHour = hour
+        this.endMinutes = minute
         circularSliderView?.setEndTime(hour, minute)
     }
 
