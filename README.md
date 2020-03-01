@@ -63,7 +63,7 @@ repositories {
 ### Add this to build.gradle
 ```
 dependencies {
-    implementation 'com.github.AbanobNageh:CircularTimerClock-Android:0.2.0'
+    implementation 'com.github.AbanobNageh:CircularTimerClock-Android:0.2.1'
 }
 ```
 
